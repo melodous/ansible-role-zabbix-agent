@@ -109,7 +109,7 @@
 - name: "Create hostgroups"
   local_action:
     module: zabbix_group
-    server_url: "{{ zabbix_url }}"
+    server_url: "{{ zabbix_api_url }}"
     login_user: "{{ zabbix_api_user }}"
     login_password: "{{ zabbix_api_pass }}"
     host_group: "{{ zabbix_host_groups }}"
@@ -122,7 +122,7 @@
 - name: "Create a new host or update an existing host's info"
   local_action:
     module: zabbix_host
-    server_url: "{{ zabbix_url }}"
+    server_url: "{{ zabbix_api_url }}"
     login_user: "{{ zabbix_api_user }}"
     login_password: "{{ zabbix_api_pass }}"
     host_name: "{{ agent_hostname }}"
@@ -140,7 +140,7 @@
 - name: "Updating host configuration with macros"
   local_action:
     module: zabbix_hostmacro
-    server_url: "{{ zabbix_url }}"
+    server_url: "{{ zabbix_api_url }}"
     login_user: "{{ zabbix_api_user }}"
     login_password: "{{ zabbix_api_pass }}"
     host_name: "{{ agent_hostname }}"

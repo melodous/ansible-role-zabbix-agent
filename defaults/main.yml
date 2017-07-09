@@ -9,7 +9,7 @@ agent_server:
 agent_serveractive:
 
 # Zabbix API stuff
-zabbix_url: "http://zabbix.dj-wasabi.local"
+zabbix_api_url: "http://zabbix.dj-wasabi.local"
 zabbix_api_user: Admin
 zabbix_api_pass: zabbix
 zabbix_api_create_hostgroup: False
@@ -58,7 +58,7 @@ agent_timeout: 3
 agent_include: /etc/zabbix/zabbix_agentd.d
 agent_unsafeuserparameters: 0
 agent_userparameter:
-agent_loadmodulepath: ${libdir}/modules
+agent_loadmodulepath: /usr/lib64/zabbix/modules
 agent_loadmodule:
 
 # TLS settings

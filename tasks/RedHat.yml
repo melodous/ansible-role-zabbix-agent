@@ -37,6 +37,14 @@
     - init
     - zabbix-agent
 
+- name: "RedHat | Installing zabbix-sender"
+  yum:  pkg=zabbix-sender
+        state={{ zabbix_agent_package_state }}
+  become: yes
+  tags:
+    - init
+    - zabbix-agent
+
 - name: "RedHat | Enable the service"
   service: name={{ zabbix_agent_service }}
            enabled=yes
@@ -45,3 +53,6 @@
     - zabbix-agent
     - init
     - service
+
+- name: "Create zabbix home user"
+  file: state=directory path=/var/lib/zabbix owner=zabbix group=zabbix

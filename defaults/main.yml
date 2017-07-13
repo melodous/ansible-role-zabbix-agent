@@ -57,7 +57,7 @@ agent_zabbix_alias:
 agent_timeout: 3
 agent_include: /etc/zabbix/zabbix_agentd.d
 agent_unsafeuserparameters: 0
-agent_userparameter:
+agent_userparameter: false
 agent_loadmodulepath: /usr/lib64/zabbix/modules
 agent_loadmodule:
 

@@ -1,0 +1,24 @@
+---
+
+- name: "Installing userparameters file"
+  copy: src="{{ item }}"
+        dest="{{ agent_include }}/{{ item }}"
+        owner=zabbix
+        group=zabbix
+        mode=0755
+  notify: restart zabbix-agent
+  become: yes
+  with_items:
+    - "{{ zbx_agent_usersparameters }}"
+
+- name: "Installing scripts file"
+  copy: src="{{ item }}"
+        dest="/usr/local/bin/{{ item }}"
+        owner=zabbix
+        group=zabbix
+        mode=0755
+  notify: restart zabbix-agent
+  become: yes
+  with_items:
+    - "{{ zbx_agent_scripts }}"
+

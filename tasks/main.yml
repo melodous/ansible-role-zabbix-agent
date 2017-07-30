@@ -97,6 +97,9 @@
     - config
     - include
 
+- name: "Install scripts"
+  include: "scripts.yml"
+
 - name: "Make sure the zabbix-agent service is running"
   service: name=zabbix-agent
            state=started

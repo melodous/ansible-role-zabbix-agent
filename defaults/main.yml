@@ -57,9 +57,15 @@ agent_zabbix_alias:
 agent_timeout: 3
 agent_include: /etc/zabbix/zabbix_agentd.d
 agent_unsafeuserparameters: 0
-agent_userparameter: false
+agent_userparameter: true
 agent_loadmodulepath: /usr/lib64/zabbix/modules
 agent_loadmodule:
+zbx_agent_usersparameters:
+  - userparameter_diskstats.conf
+
+zbx_agent_scripts:
+  - lld-disks.py
+  
 
 # TLS settings
 agent_tlsconnect:
